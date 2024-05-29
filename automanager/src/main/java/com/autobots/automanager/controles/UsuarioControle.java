@@ -138,7 +138,6 @@ public class UsuarioControle {
 			return new ResponseEntity<String>("Usuario não encontrado...",HttpStatus.NOT_FOUND);
 		}else {
 			
-			//venda
 			for(Venda venda: repositorioVenda.findAll()) {
 				if(venda.getCliente() != null) {		
 					if(venda.getCliente().getId() == idUsuario) {
@@ -154,7 +153,6 @@ public class UsuarioControle {
 				}
 			}
 			
-			//veiculo
 			for(Veiculo veiculo: repositorioVeiculo.findAll()) {
 				if(veiculo.getProprietario() != null) {	
 					if(veiculo.getProprietario().getId() == idUsuario) {

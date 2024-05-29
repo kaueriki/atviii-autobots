@@ -52,7 +52,7 @@ public class Mercadoria extends RepresentationModel<Mercadoria> {
 	public void setValidade(Date validade) {
 		this.validade = validade;
 	}
-
+	
 	public Date getFabricao() {
 		return fabricao;
 	}

@@ -24,7 +24,6 @@ public class Empresa extends RepresentationModel<Empresa>{
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	
 	@Column(nullable = false)
 	private String razaoSocial;
 	@Column

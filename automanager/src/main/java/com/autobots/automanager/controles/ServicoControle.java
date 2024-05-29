@@ -118,7 +118,6 @@ public class ServicoControle {
 		if(verificador == null) {
 			return new ResponseEntity<>("Servico não encontrado", HttpStatus.NOT_FOUND);
 		}else {
-			//empresa
 			for(Empresa empresa: repositorioEmpresa.findAll()) {
 				if(empresa.getServicos().size() > 0) {
 					for(Servico servicoEmpresa: empresa.getServicos()) {
@@ -131,7 +130,6 @@ public class ServicoControle {
 				}
 			}
 
-			//venda
 			for(Venda venda: repositorioVenda.findAll()) {
 				if(venda.getServicos().size() > 0) {
 					for(Servico servicoVenda: venda.getServicos()) {

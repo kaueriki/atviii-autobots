@@ -66,7 +66,7 @@ public class TelefoneControle {
 	public ResponseEntity<?> atualizarTelefone(@PathVariable Long idTelefone, @RequestBody Telefone dados){
 		Telefone telefone = repositorio.findById(idTelefone).orElse(null);
 		if(telefone == null) {
-			return new ResponseEntity<>("Telefone não econtrado...", HttpStatus.NOT_FOUND);
+			return new ResponseEntity<>("Telefone não encontrado...", HttpStatus.NOT_FOUND);
 		}else {
 			if(dados != null) {
 				if(dados.getDdd() != null) {
@@ -85,10 +85,9 @@ public class TelefoneControle {
 	public ResponseEntity<?> excluirTelefone(@PathVariable Long idTelefone){
 		Telefone verificacao = repositorio.findById(idTelefone).orElse(null);
 		if(verificacao == null) {
-			return new ResponseEntity<>("Telefone não econtrado...", HttpStatus.NOT_FOUND);
+			return new ResponseEntity<>("Telefone não encontrado...", HttpStatus.NOT_FOUND);
 		}else {
 			
-			//usuario
 			for(Usuario usuario: repositorioUsuario.findAll()) {
 				if(!usuario.getTelefones().isEmpty()) {
 					for(Telefone telefone: usuario.getTelefones()) {
@@ -101,7 +100,6 @@ public class TelefoneControle {
 				}
 			}
 			
-			//empresa
 			for(Empresa empresa: repositorioEmpresa.findAll()) {
 				if(!empresa.getTelefones().isEmpty()) {
 					for(Telefone telefone: empresa.getTelefones()) {

@@ -1,12 +1,12 @@
-// package com.autobots.automanager;
+package com.autobots.automanager;
 
-// import org.junit.jupiter.api.Test;
-// import org.springframework.boot.test.context.SpringBootTest;
+import org.junit.jupiter.api.Test;
+import org.springframework.boot.test.context.SpringBootTest;
 
-// @SpringBootTest
-// class AutomanagerApplicationTests {
+@SpringBootTest
+class AutomanagerApplicationTests {
 
-// 	@Test
-// 	void contextLoads() {
-// 	}
-// }
+	@Test
+	void contextLoads() {
+	}
+}

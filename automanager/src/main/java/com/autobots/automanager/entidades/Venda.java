@@ -94,7 +94,7 @@ public class Venda extends RepresentationModel<Venda>{
 	public void setMercadorias(Set<Mercadoria> mercadorias) {
 		this.mercadorias = mercadorias;
 	}
-	
+
 	public Set<Servico> getServicos() {
 		return servicos;
 	}

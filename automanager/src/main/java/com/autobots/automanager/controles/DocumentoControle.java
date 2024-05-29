@@ -62,7 +62,7 @@ public class DocumentoControle {
 	public ResponseEntity<?> atualizarDocumento(@PathVariable Long idDocumento, @RequestBody Documento dados) {
 		Documento documento = repositorio.findById(idDocumento).orElse(null);
 		if(documento == null) {
-			return new ResponseEntity<>("Documento não econtrado...", HttpStatus.NOT_FOUND);
+			return new ResponseEntity<>("Documento não encontrado...", HttpStatus.NOT_FOUND);
 		}else {
 			if(dados != null) {
 				if(dados.getNumero() != null) {
@@ -85,7 +85,7 @@ public class DocumentoControle {
 		Documento verificacao = repositorio.findById(idDocumento).orElse(null);
 		
 		if(verificacao == null) {
-			return new ResponseEntity<>("Documento não econtrado...", HttpStatus.NOT_FOUND);
+			return new ResponseEntity<>("Documento não encontrado...", HttpStatus.NOT_FOUND);
 		}else {
 			for(Usuario usuario: repositorioUsuario.findAll()) {
 				if(!usuario.getDocumentos().isEmpty()) {

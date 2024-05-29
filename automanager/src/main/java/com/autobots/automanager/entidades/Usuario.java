@@ -92,7 +92,7 @@ public class Usuario extends RepresentationModel<Usuario>{
 	public void setTelefones(Set<Telefone> telefones) {
 		this.telefones = telefones;
 	}
-
+	
 	public Endereco getEndereco() {
 		return endereco;
 	}

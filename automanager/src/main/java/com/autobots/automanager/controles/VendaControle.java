@@ -174,7 +174,6 @@ public class VendaControle {
 			return new ResponseEntity<>("Venda não encontrada...", HttpStatus.NOT_FOUND);
 		} else {
 
-			// empresa
 			for (Empresa empresa : repositorioEmpresa.findAll()) {
 				if (!empresa.getVendas().isEmpty()) {
 					for (Venda vendaEmpresa : empresa.getVendas()) {
@@ -187,7 +186,6 @@ public class VendaControle {
 				}
 			}
 
-			// usuarios
 			for (Usuario usuario : repositorioUsuario.findAll()) {
 				if (!usuario.getVendas().isEmpty()) {
 					for (Venda vendaUsuario : usuario.getVendas()) {

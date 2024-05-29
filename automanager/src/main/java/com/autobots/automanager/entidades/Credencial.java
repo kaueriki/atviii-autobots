@@ -39,7 +39,7 @@ public abstract class Credencial extends RepresentationModel<Credencial>{
 	public Date getCriacao() {
 		return criacao;
 	}
-	
+
 	public void setCriacao(Date criacao) {
 		this.criacao = criacao;
 	}
@@ -55,7 +55,7 @@ public abstract class Credencial extends RepresentationModel<Credencial>{
 	public boolean isInativo() {
 		return inativo;
 	}
-	
+
 	public void setInativo(boolean inativo) {
 		this.inativo = inativo;
 	}

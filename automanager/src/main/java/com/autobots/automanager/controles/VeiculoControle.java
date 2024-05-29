@@ -112,7 +112,6 @@ public class VeiculoControle {
 			return new ResponseEntity<>("Veiculo não encontrado...",HttpStatus.NOT_FOUND);
 
 		}else {
-			//usuario
 			for(Usuario usuario: repositorioUsuario.findAll()) {
 				if(!usuario.getVeiculos().isEmpty()) {
 					for(Veiculo veiculoUsuario: usuario.getVeiculos()) {
@@ -125,7 +124,6 @@ public class VeiculoControle {
 				}
 			}
 			
-			//venda
 			for(Venda venda: repositorioVenda.findAll()) {
 				if(venda.getVeiculo() != null) {
 					if(venda.getVeiculo().getId() == idVeiculo) {

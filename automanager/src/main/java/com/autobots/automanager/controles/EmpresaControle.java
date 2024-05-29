@@ -70,7 +70,7 @@ public class EmpresaControle {
 	public ResponseEntity<?> atualizarEmpresa(@PathVariable Long idEmpresa, @RequestBody Empresa dados){
 		Empresa empresa = repositorio.findById(idEmpresa).orElse(null);
 		if(empresa == null) {
-			return new ResponseEntity<>("Empresa não econtrada...", HttpStatus.NOT_FOUND);
+			return new ResponseEntity<>("Empresa não encontrada...", HttpStatus.NOT_FOUND);
 		}else {
 			if(dados != null) {
 				if(dados.getNomeFantasia() != null) {
@@ -90,7 +90,7 @@ public class EmpresaControle {
 		Empresa verificacao = repositorio.findById(idEmpresa).orElse(null);
 		
 		if(verificacao == null) {
-			return new ResponseEntity<>("Empresa não econtrada...", HttpStatus.NOT_FOUND);
+			return new ResponseEntity<>("Empresa não encontrada...", HttpStatus.NOT_FOUND);
 		}else {
 			repositorio.deleteById(idEmpresa);
 			return new ResponseEntity<>("Empresa excluida com sucesso...", HttpStatus.ACCEPTED);

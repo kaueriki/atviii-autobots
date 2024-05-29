@@ -154,7 +154,6 @@ public class MercadoriaControle {
 		if(validacao == null) {
 			return new ResponseEntity<>("Mercadoria não encontrada...",HttpStatus.NOT_FOUND);
 		}else {
-			//empresa
 			for(Empresa empresa: repositorioEmpresa.findAll()) {
 				if(!empresa.getMercadorias().isEmpty()) {
 					for(Mercadoria mercadoriaEmpresa: empresa.getMercadorias()) {
@@ -167,7 +166,6 @@ public class MercadoriaControle {
 				}
 			}
 			
-			//usuario
 			for(Usuario usuario: repositorioUsuario.findAll()) {
 				if(!usuario.getMercadorias().isEmpty()) {
 					for(Mercadoria mercadoriaUsuario:usuario.getMercadorias()) {

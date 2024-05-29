@@ -66,7 +66,7 @@ public class EnderecoControle {
 	public ResponseEntity<?> atualizarEndereco(@PathVariable Long idEndereco, @RequestBody Endereco dados){
 		Endereco endereco = repositorio.findById(idEndereco).orElse(null);
 		if(endereco == null) {
-			return new ResponseEntity<>("Endereco não econtrado...", HttpStatus.NOT_FOUND);
+			return new ResponseEntity<>("Endereco não encontrado...", HttpStatus.NOT_FOUND);
 		}else {
 			if(dados != null) {
 				if(dados.getEstado() != null) {
@@ -100,10 +100,9 @@ public class EnderecoControle {
 	public ResponseEntity<?> excluirEndereco(@PathVariable Long idEndereco){
 		Endereco verificacao = repositorio.findById(idEndereco).orElse(null);
 		if(verificacao == null) {
-			return new ResponseEntity<>("Endereco não econtrado...", HttpStatus.NOT_FOUND);
+			return new ResponseEntity<>("Endereco não encontrado...", HttpStatus.NOT_FOUND);
 		}else {
 
-			//usuario
 			List<Usuario> usuarios = repositorioUsuario.findAll(); 
 			for(Usuario usuario: usuarios) {
 				if(usuario.getEndereco() != null) {
@@ -115,7 +114,6 @@ public class EnderecoControle {
 				}
 			}
 
-			//empresa
 			for(Empresa empresa: repositorioEmpresa.findAll()) {
 				if(empresa.getEndereco() != null) {
 					if(empresa.getEndereco().getId() == idEndereco) {

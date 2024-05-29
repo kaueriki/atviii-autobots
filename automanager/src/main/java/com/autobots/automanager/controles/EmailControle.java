@@ -62,7 +62,7 @@ public class EmailControle {
 	public ResponseEntity<?> atualizarEmail(@PathVariable Long idEmail, @RequestBody Email dados){
 		Email email = repositorio.findById(idEmail).orElse(null);
 		if(email == null) {
-			return new ResponseEntity<>("Email não econtrado...", HttpStatus.NOT_FOUND);
+			return new ResponseEntity<>("Email não encontrado...", HttpStatus.NOT_FOUND);
 		}else {
 			if(dados != null) {
 				if(dados.getEndereco() != null) {
@@ -78,7 +78,7 @@ public class EmailControle {
 	public ResponseEntity<?> excluirEmail(@PathVariable Long idEmail){
 		Email verificacao = repositorio.findById(idEmail).orElse(null);
 		if(verificacao == null) {
-			return new ResponseEntity<>("Email não econtrado...", HttpStatus.NOT_FOUND);
+			return new ResponseEntity<>("Email não encontrado...", HttpStatus.NOT_FOUND);
 		}else {
 			for(Usuario usuario: repositorioUsuario.findAll()) {
 				if(!usuario.getEmails().isEmpty()) {
